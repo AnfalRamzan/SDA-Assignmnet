@@ -1,0 +1,10 @@
+package LMS;
+
+public interface ClerkActions 
+{
+    void issueBook();
+    void returnBook();
+    void renewBook();
+    void addBorrower();
+    void updateBorrower();
+}

@@ -1,0 +1,37 @@
+ppublic class Librarian extends Staff implements BorrowerActions , ClerkActions , LibrarianActions{
+
+    public Librarian(String name, String id) {
+        super(name, id);
+    }
+
+    public void addBook(String bookTitle) {
+        System.out.println("Book added: " + bookTitle);
+    }
+
+    public void removeBook(String bookTitle) {
+        System.out.println("Book removed: " + bookTitle);
+    }
+}
+@Override
+public void addBook()
+{
+    System.out.println("Add Book");
+}
+
+@Override
+public void removeBook()
+{
+    System.out.println("Remove Book");
+}
+
+@Override
+public void updateBook()
+{
+    System.out.println("Update Book");
+}
+
+@Override
+public void viewClerkInfo()
+{
+    System.out.println("View Clerk Info");
+}
