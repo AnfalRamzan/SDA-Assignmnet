@@ -1,33 +1,25 @@
-import org.springframework.stereotype.Component;
 package LMS;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
+
+@SpringBootApplication
 public class Main {
 
     public static void main(String[] args) {
 
-        // Create dependencies
-        BookManager bookManager = new BookManager();
-        PersonManager personManager = new PersonManager();
-        SearchService searchService = new SearchService();
-        FineService fineService = new FineService();
-        LoginService loginService = new LoginService();
-        HistoryService historyService = new HistoryService();
-        DatabaseService databaseService = new DatabaseService();
+        // Start Spring Boot application
+        ApplicationContext context =
+                SpringApplication.run(Main.class, args);
 
-        // Inject into Library (Dependency Injection)
-        Library library = new Library(
-                bookManager,
-                personManager,
-                searchService,
-                fineService,
-                loginService,
-                historyService,
-                databaseService
-        );
+        // Get Library bean from Spring container
+        Library library = context.getBean(Library.class);
 
-        // Optional testing
+        // Testing
         library.setName("My Digital Library");
 
-        System.out.println("Library created successfully: " + library.getLibraryName());
+        System.out.println("Library started successfully using Spring Boot");
+        System.out.println("Library Name: " + library.getLibraryName());
     }
 }
