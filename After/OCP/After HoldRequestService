@@ -1,0 +1,9 @@
+package LMS;
+
+import java.util.List;
+
+public interface HoldRequestService {
+    void add(HoldRequest hr);
+    void remove();
+    List<HoldRequest> getAll();
+}

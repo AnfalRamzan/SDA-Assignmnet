@@ -1,0 +1,24 @@
+package LMS;
+
+import java.util.Date;
+
+public class HoldRequest {
+
+    private Borrower borrower;
+    private Book book;
+    private Date date;
+
+    public HoldRequest(Borrower borrower, Book book) {
+        this.borrower = borrower;
+        this.book = book;
+        this.date = new Date();
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+}

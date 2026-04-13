@@ -1,0 +1,19 @@
+package LMS;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Librarian extends Staff {
+
+    private final IssueService issueService;
+
+    public Librarian(@Qualifier("vipIssueService") IssueService issueService) {
+        super(0, "Admin");
+        this.issueService = issueService;
+    }
+
+    public void issueBook(Book book, Borrower borrower) {
+        issueService.issue(book, borrower, this);
+    }
+}

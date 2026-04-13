@@ -1,0 +1,25 @@
+import LMS.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext("LMS");
+
+        Library library = context.getBean(Library.class);
+        library.setName("My Library");
+        library.loadData();
+
+        Librarian librarian = context.getBean(Librarian.class);
+
+        Book book = new Book("Clean Code");
+        Borrower borrower = new Borrower(1, "Ali");
+
+        librarian.issueBook(book, borrower);
+
+        System.out.println("System Running Successfully");
+    }
+}

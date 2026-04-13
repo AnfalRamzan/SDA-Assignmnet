@@ -1,0 +1,23 @@
+package LMS;
+
+import org.springframework.stereotype.Service;
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class DefaultHoldRequestService implements HoldRequestService {
+
+    private final List<HoldRequest> list = new ArrayList<>();
+
+    public void add(HoldRequest hr) {
+        list.add(hr);
+    }
+
+    public void remove() {
+        if (!list.isEmpty()) list.remove(0);
+    }
+
+    public List<HoldRequest> getAll() {
+        return list;
+    }
+}

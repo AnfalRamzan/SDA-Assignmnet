@@ -1,0 +1,36 @@
+package LMS;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Book {
+
+    private String title;
+    private boolean issued;
+
+    private List<HoldRequest> holdRequests = new ArrayList<>();
+
+    public Book(String title) {
+        this.title = title;
+    }
+
+    public void addHoldRequest(HoldRequest hr) {
+        holdRequests.add(hr);
+    }
+
+    public List<HoldRequest> getHoldRequests() {
+        return holdRequests;
+    }
+
+    public void setIssued(boolean issued) {
+        this.issued = issued;
+    }
+
+    public boolean isIssued() {
+        return issued;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+}

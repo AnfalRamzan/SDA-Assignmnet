@@ -1,0 +1,22 @@
+package LMS;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Library {
+
+    private final LibraryRepository repository;
+    private String name;
+
+    public Library(LibraryRepository repository) {
+        this.repository = repository;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void loadData() {
+        repository.load(this);
+    }
+}

@@ -1,0 +1,8 @@
+package LMS;
+
+public class Borrower extends Person {
+
+    public Borrower(int id, String name) {
+        super(id, name);
+    }
+}
