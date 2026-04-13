@@ -11,7 +11,7 @@ public class Main {
 
         // Start Spring Boot application
         ApplicationContext context =
-                SpringApplication.run(Main.class, args);
+                SpringApplication.run(lib.class, args);
 
         // Get Library bean from Spring container
         Library library = context.getBean(Library.class);
