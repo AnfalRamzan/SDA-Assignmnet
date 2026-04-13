@@ -1,3 +1,4 @@
+import org.springframework.stereotype.Component;
 package LMS;
 
 public class Main {
