@@ -1,0 +1,12 @@
+package LMS;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class DBLibraryRepository implements LibraryRepository {
+
+    @Override
+    public void load(Library lib) {
+        System.out.println("Loading data from DB...");
+    }
+}

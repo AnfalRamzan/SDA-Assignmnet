@@ -1,0 +1,5 @@
+package LMS;
+
+public interface LibraryRepository {
+    void load(Library lib);
+}
