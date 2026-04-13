@@ -1,0 +1,9 @@
+package LMS;
+
+public interface BorrowerActions 
+{
+    void searchBook();
+    void placeHold();
+    void viewPersonalInfo();
+    void checkFine();
+}

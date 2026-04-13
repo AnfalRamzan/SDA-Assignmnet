@@ -1,0 +1,38 @@
+public class Borrower extends Person implements BorrowerActions {
+
+    public Borrower(String name, String id) {
+        super(name, id);
+    }
+
+    public void borrowBook(String bookTitle) {
+        System.out.println(name + " borrowed: " + bookTitle);
+    }
+
+    public void returnBook(String bookTitle) {
+        System.out.println(name + " returned: " + bookTitle);
+    }
+}
+@Override
+public void searchBook()
+{
+    Library.getInstance().searchForBooks();
+}
+
+@Override
+public void placeHold()
+{
+    System.out.println("Borrower placing hold...");
+}
+
+@Override
+public void viewPersonalInfo()
+{
+    this.printInfo();
+}
+
+@Override
+public void checkFine()
+{
+    double fine = Library.getInstance().computeFine2(this);
+    System.out.println("Total Fine: Rs " + fine);
+}

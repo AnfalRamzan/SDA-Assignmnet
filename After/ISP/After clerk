@@ -1,0 +1,61 @@
+
+package LMS;
+
+public class Clerk extends Staff implements BorrowerActions , ClerkActions{
+  
+    int deskNo;     //Desk Number of the Clerk
+    public static int currentdeskNumber = 0;
+  
+    public Clerk(int id, String n, String a,int ph, double s,int dk) // para cons.
+    {
+        super(id,n,a,ph,s);
+        
+        if(dk == -1)
+        {
+            deskNo = currentdeskNumber;
+        }
+        else
+        {
+            deskNo=dk;
+        }
+        
+        currentdeskNumber++;
+    }
+    
+    // Printing Clerk's Info
+    @Override
+    public void printInfo()
+    {
+        super.printInfo();
+        System.out.println("Desk Number: " + deskNo);
+    }
+    @Override
+public void issueBook()
+{
+    System.out.println("Issue Book functionality");
+}
+
+@Override
+public void returnBook()
+{
+    System.out.println("Return Book functionality");
+}
+
+@Override
+public void renewBook()
+{
+    System.out.println("Renew Book functionality");
+}
+
+@Override
+public void addBorrower()
+{
+    Library.getInstance().createPerson('b');
+}
+
+@Override
+public void updateBorrower()
+{
+    System.out.println("Update Borrower");
+}
+}   // Clerk's Class Closed

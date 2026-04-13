@@ -1,0 +1,9 @@
+package LMS;
+
+public interface LibrarianActions 
+{
+    void addBook();
+    void removeBook();
+    void updateBook();
+    void viewClerkInfo();
+}
